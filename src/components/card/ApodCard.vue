@@ -1,10 +1,10 @@
 <template>
-  <n-card title="Astronomy Picture of the Day">
-    Картинка дня
-  </n-card>
+  <HeaderPage/>
+  <div class="card"><p>приветь</p></div>
 </template>
 <script setup>
 
+import HeaderPage from "@/components/HeaderPage.vue";
 </script>
 
 

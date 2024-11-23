@@ -1,13 +1,12 @@
 <template>
   <n-config-provider :theme="theme">
-  <MainPage/>
+    <router-view></router-view>
   </n-config-provider>
 </template>
 
 <script setup>
 
 import {darkTheme, NConfigProvider} from 'naive-ui';
-import MainPage from "@/components/MainPage.vue";
 const theme = darkTheme;
 </script>
 

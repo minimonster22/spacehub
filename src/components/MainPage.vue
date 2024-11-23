@@ -1,7 +1,7 @@
 <template>
 
-    <HeaderPage class="header"/>
-    <NavigationBox/>
+  <HeaderPage class="header"/>
+  <NavigationBox/>
 
 </template>
 
@@ -11,11 +11,8 @@ import HeaderPage from "@/components/HeaderPage.vue";
 import NavigationBox from "@/components/NavigationBox.vue";
 
 
-
 </script>
 
 <style>
-.header {
-  margin-top: 20px;
-}
+
 </style>

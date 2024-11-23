@@ -1,13 +1,12 @@
 <template>
-  <n-card title="EPIC">
-    Картинка Земли из космоса
-  </n-card>
+  <HeaderPage/>
+  <div class="card"><p>приветь</p></div>
 </template>
 
 <script setup>
 
+import HeaderPage from "@/components/HeaderPage.vue";
 </script>
-
 
 
 <style scoped>

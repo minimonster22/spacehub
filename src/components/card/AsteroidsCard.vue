@@ -1,11 +1,11 @@
 <template>
-  <n-card title="Asteroids">
-    Информация об астероидах что приближаются к Земле
-  </n-card>
+  <HeaderPage/>
+  <div class="card"><p>приветь</p></div>
 </template>
 
 <script setup>
 
+import HeaderPage from "@/components/HeaderPage.vue";
 </script>
 
 

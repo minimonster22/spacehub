@@ -1,21 +1,44 @@
 <template>
   <div class="container">
-    <ApodCard class="card-item"/>
-    <AsteroidsCard class="card-item"/>
-    <NotificationsCard class="card-item"/>
-    <EpicCard class="card-item"/>
-    <ExperimentsCard class="card-item"/>
-    <TechTransferCard class="card-item"/>
+    <router-link to="/apod">
+      <n-card title="Astronomy Picture of the Day" class="card-item">
+        Картинка дня
+      </n-card>
+    </router-link>
+
+    <router-link to="/asteroids">
+      <n-card title="Asteroids" class="card-item">
+        Информация об астероидах, что приближаются к Земле
+      </n-card>
+    </router-link>
+
+    <router-link to="/notifications">
+      <n-card title="Notifications" class="card-item">
+        Астероиды в выбранный период времени
+      </n-card>
+    </router-link>
+
+    <router-link to="/epic">
+      <n-card title="EPIC" class="card-item">
+        Картинка Земли из космоса
+      </n-card>
+    </router-link>
+
+    <router-link to="/experiments">
+      <n-card title="Experiments" class="card-item">
+        Эксперименты
+      </n-card>
+    </router-link>
+
+    <router-link to="/tech-transfer">
+      <n-card title="Tech Transfer" class="card-item">
+        Поиск по патентам
+      </n-card>
+    </router-link>
   </div>
 </template>
-<script setup>
 
-import AsteroidsCard from "@/components/card/AsteroidsCard.vue";
-import NotificationsCard from "@/components/card/NotificationsCard.vue";
-import EpicCard from "@/components/card/EpicCard.vue";
-import ExperimentsCard from "@/components/card/ExperimentsCard.vue";
-import TechTransferCard from "@/components/card/TechTransferCard.vue";
-import ApodCard from "@/components/card/ApodCard.vue";
+<script setup>
 
 
 </script>
@@ -30,6 +53,7 @@ import ApodCard from "@/components/card/ApodCard.vue";
   gap: 10px;
   justify-content: space-around;
 }
+
 .card-item {
   width: 12vw;
   cursor: pointer;

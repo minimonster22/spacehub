@@ -1,12 +1,11 @@
 <template>
-  <n-card title="Experiments">
-    Эксперименты
-  </n-card>
+  <HeaderPage/>
+  <div class="card"><p>приветь</p></div>
 </template>
 <script setup>
 
+import HeaderPage from "@/components/HeaderPage.vue";
 </script>
-
 
 
 <style scoped>
