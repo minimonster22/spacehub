@@ -11,12 +11,19 @@ const theme = darkTheme;
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+  font-family: 'Mulish', sans-serif;
+  font-optical-sizing: auto;
+  color: #9B6AD6;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #9B6AD6;
 
 }
 

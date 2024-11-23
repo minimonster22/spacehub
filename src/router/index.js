@@ -7,6 +7,7 @@ import EpicCard from "@/components/card/EpicCard.vue";
 import ExperimentsCard from "@/components/card/ExperimentsCard.vue";
 import NotificationsCard from "@/components/card/NotificationsCard.vue";
 import TechTransferCard from "@/components/card/TechTransferCard.vue";
+import FavoritesApod from "@/components/card/FavoritesApod.vue";
 
 const routes = [
     { path: '/', name: 'MainPage', component: MainPage },
@@ -16,6 +17,7 @@ const routes = [
     { path: '/experiments', name: 'ExperimentsCard', component: ExperimentsCard },
     { path: '/notifications', name: 'NotificationsCard', component: NotificationsCard },
     { path: '/tech-transfer', name: 'TechTransferCard', component: TechTransferCard },
+    { path: '/apod/favorites', name: 'FavoritesApod', component: FavoritesApod },
 ];
 
 const router = createRouter({
