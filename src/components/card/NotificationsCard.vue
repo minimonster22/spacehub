@@ -4,10 +4,8 @@
   </n-card>
 </template>
 
-<script>
-export default {
-  name: "NotificationsCard"
-}
+<script setup>
+
 </script>
 
 

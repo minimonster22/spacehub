@@ -8,18 +8,16 @@
     <TechTransferCard class="card-item"/>
   </div>
 </template>
-<script>
-import ApodCard from "@/components/ApodCard.vue";
-import AsteroidsCard from "@/components/AsteroidsCard.vue";
-import NotificationsCard from "@/components/NotificationsCard.vue";
-import EpicCard from "@/components/EpicCard.vue";
-import ExperimentsCard from "@/components/ExperimentsCard.vue";
-import TechTransferCard from "@/components/TechTransferCard.vue";
+<script setup>
 
-export default {
-  name: "NavigationBox",
-  components: {TechTransferCard, ExperimentsCard, EpicCard, NotificationsCard, AsteroidsCard, ApodCard}
-}
+import AsteroidsCard from "@/components/card/AsteroidsCard.vue";
+import NotificationsCard from "@/components/card/NotificationsCard.vue";
+import EpicCard from "@/components/card/EpicCard.vue";
+import ExperimentsCard from "@/components/card/ExperimentsCard.vue";
+import TechTransferCard from "@/components/card/TechTransferCard.vue";
+import ApodCard from "@/components/card/ApodCard.vue";
+
+
 </script>
 
 

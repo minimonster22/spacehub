@@ -4,10 +4,8 @@
   </n-card>
 </template>
 
-<script>
-export default {
-  name: "AsteroidsCard"
-}
+<script setup>
+
 </script>
 
 

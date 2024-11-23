@@ -1,18 +1,14 @@
 <template>
-<MainPage/>
+  <n-config-provider :theme="theme">
+  <MainPage/>
+  </n-config-provider>
 </template>
 
-<script>
+<script setup>
 
-
+import {darkTheme, NConfigProvider} from 'naive-ui';
 import MainPage from "@/components/MainPage.vue";
-
-export default {
-  name: 'App',
-  components: {
-    MainPage
-  }
-}
+const theme = darkTheme;
 </script>
 
 <style>

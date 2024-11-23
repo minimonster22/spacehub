@@ -4,10 +4,8 @@
   </n-card>
 </template>
 
-<script>
-export default {
-  name: "EpicCard"
-}
+<script setup>
+
 </script>
 
 

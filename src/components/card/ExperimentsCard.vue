@@ -3,10 +3,8 @@
     Эксперименты
   </n-card>
 </template>
-<script>
-export default {
-  name: "ExperimentsCard"
-}
+<script setup>
+
 </script>
 
 

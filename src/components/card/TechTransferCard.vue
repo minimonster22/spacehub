@@ -3,10 +3,8 @@
     Поиск по патентам
   </n-card>
 </template>
-<script>
-export default {
-  name: "TechTransferCard"
-}
+<script setup>
+
 </script>
 
 

@@ -4,11 +4,9 @@
   </n-card>
 </template>
 
-<script>
+<script setup>
 
-export default {
-  name: "HeaderPage"
-}
+
 </script>
 
 

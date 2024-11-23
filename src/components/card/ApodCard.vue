@@ -1,16 +1,13 @@
 <template>
   <n-card title="Astronomy Picture of the Day">
-    Каринка дня
+    Картинка дня
   </n-card>
 </template>
-<script>
+<script setup>
 
-export default {
-  name: "ApodCard"
-}
 </script>
 
 
 <style scoped>
 
-</style>*/
+</style>
