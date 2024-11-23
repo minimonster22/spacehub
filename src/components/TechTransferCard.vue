@@ -1,13 +1,11 @@
 <template>
-
-  <n-card title="Header">
+  <n-card title="TechTransfer">
+    Поиск по патентам
   </n-card>
 </template>
-
 <script>
-
 export default {
-  name: "HeaderPage"
+  name: "TechTransferCard"
 }
 </script>
 

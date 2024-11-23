@@ -1,13 +1,12 @@
 <template>
-
-  <n-card title="Header">
+  <n-card title="EPIC">
+    Картинка Земли из космоса
   </n-card>
 </template>
 
 <script>
-
 export default {
-  name: "HeaderPage"
+  name: "EpicCard"
 }
 </script>
 

@@ -1,13 +1,11 @@
 <template>
-
-  <n-card title="Header">
+  <n-card title="Experiments">
+    Эксперименты
   </n-card>
 </template>
-
 <script>
-
 export default {
-  name: "HeaderPage"
+  name: "ExperimentsCard"
 }
 </script>
 

@@ -1,4 +1,14 @@
-import { createApp } from 'vue'
+import {create, NCard } from 'naive-ui';
+
+import {createApp} from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const naive = create({
+    components: [NCard]
+});
+
+const app = createApp(App);
+
+app.use(naive);
+
+app.mount('#app');
