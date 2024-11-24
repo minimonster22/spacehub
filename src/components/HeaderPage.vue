@@ -37,6 +37,7 @@
   flex: 1;
   text-align: center;
   margin: 0;
+  color: #6a11cb;
 }
 
 .header-slot {

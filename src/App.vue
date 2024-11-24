@@ -16,7 +16,15 @@ const theme = darkTheme;
 * {
   font-family: 'Mulish', sans-serif;
   font-optical-sizing: auto;
-  color: #9B6AD6;
+}
+
+a {
+  text-decoration: none;
+  color: #6a11cb;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 #app {
 
@@ -35,7 +43,6 @@ html, body {
 body {
   background-image: url("./assets/img/space-bg.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
 }
 </style>
