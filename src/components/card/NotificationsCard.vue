@@ -263,7 +263,18 @@ function toggleExpand(item) {
 }
 
 .message-body:not(.collapsed) {
-  max-height: 1000px;
+  max-height: min-content;
+}
+
+@media (max-width: 600px) {
+  .calendar {
+    width: 400px;
+    height: 400px;
+  }
+  .formatted-text {
+    font-size: small;
+  }
+
 }
 
 </style>

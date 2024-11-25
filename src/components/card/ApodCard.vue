@@ -184,5 +184,12 @@ onMounted(async () => {
 .btn:hover {
   background-color: #48484E;
 }
-
+@media (max-width: 900px) {
+  .description {
+    font-size: small;
+  }
+  .img-wrapper {
+    flex-direction: column;
+  }
+}
 </style>

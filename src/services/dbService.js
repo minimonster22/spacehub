@@ -88,21 +88,7 @@ export const fetchAPOD = async () => {
 
     try {
         const response = await axios.get(apiUrl);
-        const apodData = response.data;
-
-        const apodToSave = {
-            id: apodData.date,
-            title: apodData.title,
-            date: apodData.date,
-            explanation: apodData.explanation,
-            url: apodData.url,
-            media_type: apodData.media_type,
-        };
-
-        addData(apodToSave);
-
-        return apodData;
-
+        return response.data;
     } catch (err) {
         throw new Error('Не удалось загрузить данные: ' + err.message);
     }

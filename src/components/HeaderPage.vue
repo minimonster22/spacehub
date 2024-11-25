@@ -43,4 +43,16 @@
 .header-slot {
   flex-shrink: 0;
 }
+
+@media (max-width: 740px) {
+  .header-title {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 630px) {
+  .header-title {
+    font-size: 1.3em;
+  }
+}
 </style>

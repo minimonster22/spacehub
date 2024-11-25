@@ -118,10 +118,12 @@ onMounted(fetchAsteroids);
 .normal-card {
   background-color: #6a11cb;
   color: black;
+  width: fit-content;
 }
 
 .sentry-card {
   background-color: #D001AF;
+  width: fit-content;
 }
 
 a {
@@ -139,4 +141,27 @@ a {
   justify-content: center;
   gap: 15px;
 }
+
+
+@media (max-width: 1300px) {
+  :deep(.n-card-header__main) {
+    font-size: smaller;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  :deep(.n-card-header) {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 1020px) {
+
+  :deep(.n-card__content) {
+    font-size: smaller;
+  }
+}
+
 </style>
