@@ -5,7 +5,7 @@
         <n-button ghost color="#8a2be2" class="btn">
           <template #icon>
             <n-icon>
-              <Home28Regular />
+              <Home28Regular/>
             </n-icon>
           </template>
         </n-button>
@@ -14,11 +14,11 @@
     <template #header-title>
       Астрономическая картинка дня
     </template>
-    <router-link to="/apod/favorites">
+    <router-link v-if="hasFavorites" to="/apod/favorites">
       <n-button ghost color="#8a2be2" class="btn">
         <template #icon>
           <n-icon>
-            <Box24Regular />
+            <Box24Regular/>
           </n-icon>
         </template>
         Избранное
@@ -35,7 +35,7 @@
     </n-card>
     <div class="img-wrapper">
       <div class="img-container flex-item">
-        <img v-if="apodData.media_type === 'image'" :src="apodData.url" :alt="apodData.title" class="img" />
+        <img v-if="apodData.media_type === 'image'" :src="apodData.url" :alt="apodData.title" class="img"/>
         <iframe
             v-else-if="apodData.media_type === 'video'"
             :src="apodData.url"
@@ -45,7 +45,7 @@
         ></iframe>
       </div>
       <div class="description-item flex-item">
-      <p class="description">{{ apodData.explanation }}</p>
+        <p class="description">{{ apodData.explanation }}</p>
         <n-button
             ghost
             color="#8a2be2"
@@ -60,16 +60,21 @@
 </template>
 
 <script setup>
-import { Box24Regular, Home28Regular } from "@vicons/fluent";
-import { NButton, NIcon } from "naive-ui";
+import {Box24Regular, Home28Regular} from "@vicons/fluent";
+import {NButton, NIcon} from "naive-ui";
 import HeaderPage from "@/components/HeaderPage.vue";
-import { onMounted, ref } from "vue";
-import { openDB, fetchAPOD, addData  } from "@/services/dbService.js";
+import {onMounted, ref} from "vue";
+import {openDB, fetchAPOD, addData, fetchFavorites} from "@/services/dbService.js";
 
 const apodData = ref(null);
 const loading = ref(true);
 const error = ref(null);
-const addToFavorites = () => {
+
+import {useNotification} from 'naive-ui';
+
+const notification = useNotification();
+const hasFavorites = ref(false);
+const addToFavorites = async () => {
   if (apodData.value) {
     const apodToSave = {
       id: apodData.value.date,
@@ -80,16 +85,52 @@ const addToFavorites = () => {
       media_type: apodData.value.media_type,
     };
 
-    addData(apodToSave);
-    console.log("Добавлено в избранное:", apodToSave);
+    try {
+      const favorites = await fetchFavorites();
+      const isAlreadyFavorite = favorites.some(fav => fav.id === apodToSave.id);
+
+      if (isAlreadyFavorite) {
+        notification.warning({
+          title: 'Уже в избранном',
+          content: `Картинка дня (${apodToSave.title}) уже добавлена в избранное.`,
+          duration: 3000,
+        });
+        hasFavorites.value = favorites.length > 0;
+      } else {
+        await addData(apodToSave);
+
+        notification.success({
+          title: 'Добавлено в избранное',
+          content: `Картинка дня (${apodToSave.title}) добавлена в избранное.`,
+          duration: 3000,
+        });
+        const favorites = await fetchFavorites();
+
+        hasFavorites.value = favorites.length > 0;
+      }
+    } catch (error) {
+      notification.error({
+        title: 'Ошибка',
+        content: 'Произошла ошибка при добавлении в избранное.',
+        duration: 3000,
+      });
+    }
   } else {
-    console.error("Нет данных для добавления в избранное.");
+    notification.error({
+      title: 'Ошибка',
+      content: 'Нет данных для добавления в избранное.',
+      duration: 3000,
+    });
   }
 };
+
 onMounted(async () => {
   try {
     apodData.value = await fetchAPOD();
     await openDB();
+
+    const favorites = await fetchFavorites();
+    hasFavorites.value = favorites.length > 0;
   } catch (err) {
     error.value = err.message;
   } finally {
