@@ -56,7 +56,7 @@ const showTechTransfer = false;
   display: flex;
   flex-direction: row;
   gap: 10px;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .card-item {
