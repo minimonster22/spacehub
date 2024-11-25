@@ -1,18 +1,22 @@
 <template>
-  <n-config-provider :theme="theme">
-    <router-view></router-view>
-  </n-config-provider>
+  <n-notification-provider>
+    <n-config-provider :theme="theme">
+      <router-view></router-view>
+    </n-config-provider>
+  </n-notification-provider>
 </template>
 
 <script setup>
 
-import {darkTheme, NConfigProvider} from 'naive-ui';
+import {darkTheme, NConfigProvider, NNotificationProvider} from 'naive-ui';
+
 const theme = darkTheme;
 </script>
 
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
   font-family: 'Mulish', sans-serif;
   font-optical-sizing: auto;
@@ -26,6 +30,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 #app {
 
   -webkit-font-smoothing: antialiased;
